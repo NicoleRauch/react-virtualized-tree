@@ -1,7 +1,7 @@
 // Type definitions for react-virtualzed-tree
 // Definitions by: Diogo Cunha
 
-import * as React from 'react';
+import React from 'react';
 
 interface BasicNode {
   id: number | string;
@@ -15,7 +15,7 @@ export interface Node extends BasicNode {
 
 export interface FlattenedNode extends Node {
   deepness: number;
-  parents: number[];
+  parents: Array<string | number>;
 }
 
 interface NodeAction {
