@@ -18,6 +18,7 @@
     "start": "nwb serve-react-demo",
     "test": "node config/test/test.js --env=jsdom",
     "test:coverage": "node config/test/test.js --env=jsdom --coverage",
+    "prepare": "npm run build",
     "postpublish": "node config/pages",
     "stats:analyzer": "webpack-bundle-analyzer umd/stats.json umd"
   },
