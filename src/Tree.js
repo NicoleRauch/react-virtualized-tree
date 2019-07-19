@@ -44,7 +44,11 @@ export default class Tree extends React.Component {
               ref={r => (this._list = r)}
               height={height}
               rowCount={nodes.length}
-              rowHeight={this._cache.rowHeight}
+              rowHeight={param => {
+                const h = this._cache.rowHeight(param);
+                console.log('rowHeight:', param, h);
+                return h;
+              }}
               rowRenderer={this.measureRowRenderer(nodes)}
               width={width || autoWidth}
               scrollToIndex={scrollToIndex}
