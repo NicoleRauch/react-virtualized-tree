@@ -7,7 +7,7 @@ import {FlattenedNode} from './shapes/nodeShapes';
 export default class Tree extends React.Component {
   _cache = new CellMeasurerCache({
     fixedWidth: true,
-    minHeight: 20,
+    minHeight: 10,
   });
 
   rowRenderer = ({node, key, measure, style, NodeRenderer}) => {
@@ -47,7 +47,7 @@ export default class Tree extends React.Component {
               rowHeight={param => {
                 const h = this._cache.rowHeight(param);
                 console.log('rowHeight:', param, h);
-                return h === 20 ? 10 : h === 35 ? 25 : h;
+                return h; // === 20 ? 10 : h === 35 ? 25 : h;
               }}
               rowRenderer={this.measureRowRenderer(nodes)}
               width={width || autoWidth}
